@@ -18,10 +18,17 @@
             TechLab
         </a>
     </nav>
+    <h3>2e2:</h3>
     <h1>Input Text: {{vm.hello}}</h1>
     <input type="text" class="form-control" name="" id="" placeholder="" ng-model="vm.hello">
 
+    <hr>
 
+    <h3>List of fruits:</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="fruit in vm.fruits">{{fruit}}</li>
+    </ul>
+    <button type="submit" class="btn btn-primary" ng-click="vm.alertMe()">Submit</button>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
