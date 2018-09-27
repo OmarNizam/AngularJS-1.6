@@ -28,6 +28,7 @@ app.controller("mainCtrl", function (mainSvc) {
 });
 
 // custom filter
+
 app.filter('makePlural', function(){
     return function(input) {
         return input + "s";
@@ -35,10 +36,24 @@ app.filter('makePlural', function(){
 });
 
 //services and factories
-app.service('mainSvc', function($http) {
-    this.getPosts = function() {
-            return $http.get("https://jsonplaceholder.typicode.com/posts");
-        } 
-})
 
-// You can use factory insted of service and it will return an Object
+// app.service('mainSvc', function($http) {
+//     this.getPosts = function() {
+//             return $http.get("https://jsonplaceholder.typicode.com/posts");
+//         } 
+// });
+
+/** You can use factory insted of service and it will return an Object
+    * We can refactory the service to factory
+    *  so this code is istead the service & It does the same
+ **/
+// Factory
+
+app.factory('mainSvc', function($http) {
+    var getPosts = function() {
+        return $http.get("https://jsonplaceholder.typicode.com/posts");
+    };
+    return {
+        getPosts: getPosts
+    }
+})
