@@ -24,11 +24,20 @@
 
     <hr>
 
+    <p>Search by value:</p>
+    <input type="text" ng-model="vm.search">
     <h3>List of fruits:</h3>
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="fruit in vm.fruits">{{fruit}}</li>
+      <li class="list-group-item" ng-repeat="fruit in vm.fruits | filter: vm.search">{{fruit | makePlural}}</li>
+      <button type="submit" class="btn btn-primary" ng-click="vm.alertMe()">Submit</button>
     </ul>
-    <button type="submit" class="btn btn-primary" ng-click="vm.alertMe()">Submit</button>
+
+    <br>
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
