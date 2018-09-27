@@ -32,9 +32,13 @@
       <button type="submit" class="btn btn-primary" ng-click="vm.alertMe()">Submit</button>
     </ul>
 
-    <br>
-
-
+    <hr>
+    <div>
+      <h3>List of posts:</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="post in vm.posts">{{post.id}}: Title: {{post.title}}. body: {{post.body}}</li>
+      </ul>
+    </div>
 
 
 
