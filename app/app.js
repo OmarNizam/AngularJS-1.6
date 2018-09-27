@@ -2,8 +2,9 @@
 
 // the app module
 var app = angular.module("myApp", []);
+
 // main controller
-app.controller("mainCtrl", function ($http) {
+app.controller("mainCtrl", function (mainSvc) {
 
     let vm = this;
 
@@ -15,14 +16,29 @@ app.controller("mainCtrl", function ($http) {
         alert("something went wrong !!!")
     };
 
-    $http.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-        vm.posts = response.data;
-    })
+// http get call for get data from live server
+    // $http.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
+    //     vm.posts = response.data;
+    // })
+
+    mainSvc.getPosts().then((response) => {
+                    vm.posts = response.data;
+                })
 
 });
+
 // custom filter
 app.filter('makePlural', function(){
     return function(input) {
         return input + "s";
     }
 });
+
+//services and factories
+app.service('mainSvc', function($http) {
+    this.getPosts = function() {
+            return $http.get("https://jsonplaceholder.typicode.com/posts");
+        } 
+})
+
+// You can use factory insted of service and it will return an Object
