@@ -33,12 +33,7 @@
     </ul>
 
     <hr>
-    <div>
-      <h3>List of posts:</h3>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="post in vm.posts">{{post.id}}: Title: {{post.title}}. body: {{post.body}}</li>
-      </ul>
-    </div>
+    <posts-list></posts-list>
 
 
 
@@ -50,6 +45,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 
+    <script src="./posts-list/posts-list-component.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
