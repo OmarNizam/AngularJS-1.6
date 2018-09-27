@@ -1,9 +1,18 @@
 "use strict";
 
 (function(){
-    var app = angular.module('postsListModule', []);
+    // each component has module
+    var posts = angular.module('postsListModule', []);
 
-    // first we write the component controller
+    // First declare the component (the name must be JS camal case)
+
+    posts.component('postsList', {
+        templateUrl: 'posts-list/posts-list.html',
+        controller: PostsListController,
+        controllerAs: 'vm'
+    })
+
+    // Second we write the component controller
     function PostsListController(mainSvc) {
         var vm = this;
         mainSvc.getPosts().then((response) => {
@@ -11,13 +20,5 @@
         })
 
     }
-
-    // Second declare the component (the name must be JS camal case)
-
-    app.component('postsList', {
-        templateUrl: 'posts-list/posts-list.html',
-        controller: PostsListController,
-        controllerAs: 'vm'
-    })
 
 })();
