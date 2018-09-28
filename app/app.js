@@ -2,7 +2,21 @@
 
 // the app module
 (function(){
-    var app = angular.module("myApp", ['postsListModule']);
+    var app = angular.module("myApp", ['postsListModule', 'ui.router']);
+
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'home.html'
+            })
+            .state('posts', {
+                url: '/posts',
+                template: '<posts-list></posts-list>'
+            })
+    })
 
     // main controller
     app.controller("mainCtrl", function (mainSvc) {
@@ -55,5 +69,5 @@
             getPosts: getPosts
         }
     })
-    
+
 })();

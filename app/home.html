@@ -1,0 +1,13 @@
+<h3>2e2:</h3>
+<h1>Input Text: {{vm.hello}}</h1>
+<input type="text" class="form-control" name="" id="" placeholder="" ng-model="vm.hello">
+
+<hr>
+
+<p>Search by value:</p>
+<input type="text" ng-model="vm.search">
+<h3>List of fruits:</h3>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="fruit in vm.fruits | filter: vm.search">{{fruit | makePlural}}</li>
+    <button type="submit" class="btn btn-primary" ng-click="vm.alertMe()">Submit</button>
+</ul>
