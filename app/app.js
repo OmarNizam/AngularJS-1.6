@@ -14,28 +14,42 @@
             })
             .state('posts', {
                 url: '/posts',
-                template: '<posts-list></posts-list>'
+                template: '<ui-view></ui-view>'
+            })
+            .state('posts.incomplete', {
+                url: '/incomplete',
+                template: '<posts-list posts="vm.incompletePosts"></posts-list>',
+                controllerAs: 'vm'
+            })
+            .state('posts.complete', {
+                url: '/complete',
+                template: '<posts-list posts="vm.completePosts"></posts-list>',
+                controllerAs: 'vm'
             })
     })
 
     // main controller
     app.controller("mainCtrl", function (mainSvc) {
 
-    let vm = this;
+        var vm = this;
 
-    this.hello = "world";
+        this.hello = "world";
 
-    this.fruits = ["Apple", "orange", "grape"];
+        this.fruits = ["Apple", "orange", "grape"];
 
-    this.alertMe = function() {
-        alert("something went wrong !!!")
+        this.alertMe = function() {
+            alert("something went wrong !!!")
+
+        mainSvc.getPosts().then((response) => {
+            this.posts.incompletePosts = response.data.splice(0, 50);
+            this.posts.completePosts = response.data;
+        })
     };
 
     // http get call for get data from live server
     // $http.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
     //     vm.posts = response.data;
     // })
-
 
     });
 

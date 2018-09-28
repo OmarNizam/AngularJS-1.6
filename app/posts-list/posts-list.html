@@ -1,6 +1,6 @@
 <div>
     <h3>List of posts:</h3>
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="post in vm.posts">{{post.id}}: Title: {{post.title}}. body: {{post.body}}</li>
+<li class="list-group-item" ng-repeat="post in vm.posts | filter: vm.search">{{post.id}}: Title: {{post.title}}. body: {{post.body}}</li>
     </ul>
 </div>

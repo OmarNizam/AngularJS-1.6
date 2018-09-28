@@ -2,14 +2,17 @@
 
 (function(){
     // each component has module
-    var posts = angular.module('postsListModule', []);
+    var app = angular.module('postsListModule', []);
 
     // First declare the component (the name must be JS camal case)
 
-    posts.component('postsList', {
+    app.component('postsList', {
         templateUrl: 'posts-list/posts-list.html',
         controller: PostsListController,
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        binding: {
+            posts: '<'
+        }
     })
 
     // Second we write the component controller
