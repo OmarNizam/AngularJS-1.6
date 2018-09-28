@@ -1,8 +1,8 @@
 "use strict";
 
-(function(){
+(function(angular){
     // each component has module
-    var app = angular.module('postsListModule', []);
+    var app = angular.module('myApp');
 
     // First declare the component (the name must be JS camal case)
 
@@ -24,4 +24,4 @@
 
     }
 
-})();
+})(window.angular);

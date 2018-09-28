@@ -1,8 +1,8 @@
 "use strict";
 
 // the app module
-(function(){
-    var app = angular.module("myApp", ['postsListModule', 'ui.router']);
+(function(angular){
+    var app = angular.module("myApp", ['ui.router']);
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -41,8 +41,8 @@
             alert("something went wrong !!!")
 
         mainSvc.getPosts().then((response) => {
-            this.posts.incompletePosts = response.data.splice(0, 50);
-            this.posts.completePosts = response.data;
+            this.incompletePosts = response.data.splice(0, 50);
+            this.completePosts = response.data;
         })
     };
 
@@ -84,4 +84,4 @@
         }
     })
 
-})();
+})(window.angular);
