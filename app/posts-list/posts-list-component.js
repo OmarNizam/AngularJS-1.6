@@ -19,9 +19,9 @@
     // Second we write the component controller
     function PostsListController(mainSvc) {
         var vm = this;
-        mainSvc.getPosts().then(function (response) {
-            vm.posts = response.data;
-        })
+        // mainSvc.getPosts().then(function (response) {
+        //     vm.posts = response.data;
+        // })
 
     }
 

@@ -44,22 +44,16 @@
 
         this.alertMe = function () {
             alert("something went wrong !!!");
+        }  
 
             mainSvc
                 .getPosts()
                 .then(
-                    function (
-                        response
-                    ) {
-                        vm.incompletePosts = response.data.splice(
-                            0,
-                            50
-                        );
-                        vm.completePosts =
-                            response.data;
+                    function (response) {
+                        vm.incompletePosts = response.data.splice(0, 50);
+                        vm.completePosts = response.data;
                     }
                 );
-        };
 
         // http get call for get data from live server
         // $http.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
