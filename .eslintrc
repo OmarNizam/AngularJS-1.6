@@ -7,12 +7,18 @@
     ],
     "rules": {
         "angular / controller_name": 0,
-        "no-set-state": "off"
+        "no-set-state": "off",
+        "no-console": 0
     },
     "settings": {
         "angular": 1
     },
     "globals": {
         "angular": true
+    },
+    "env": {
+        "node": true,
+        "browser": true,
+        "commonjs": true
     }
 }

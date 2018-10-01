@@ -1,5 +1,3 @@
-/*eslint no-alert: "error"*/
-
 // the app module
 (function () {
     "use strict";
@@ -41,7 +39,7 @@
         this.hello = "world";
 
         this.fruits = ["Apple", "orange", "grape"];
-
+        /*eslint no-alert: "error"*/
         this.alertMe = function () {
             alert("something went wrong !!!");
         }  
