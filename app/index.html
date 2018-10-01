@@ -1,18 +1,22 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-  <head>
+
+<head>
     <title>Angular App</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <base href="/" />
-  </head>
-  <body ng-controller="mainCtrl as vm" class="ng-scope">
-<header class="navbar navbar-light bg-light">
+</head>
+
+<body ng-controller="mainCtrl as vm" class="ng-scope">
+    <header class="navbar navbar-light bg-light">
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -31,7 +35,7 @@
             <a class="navbar-brand" ui-sref="home">
                 <img src="data:image/png;base64,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"
                     width="30" height="30" class="d-inline-block align-top" alt="techlab">
-                AngularJS 1.6.1
+                AngularJS 1.6.x
             </a>
         </div>
     </header>
@@ -44,11 +48,10 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" 
-                            src="https://www.atharvasystem.com/assets/angular-banner-f6dd910e222d07d805de651231051398255b5242d059c70f71372b064d452cdc.png"
+                        <img class="d-block w-100" src="https://www.atharvasystem.com/assets/angular-banner-f6dd910e222d07d805de651231051398255b5242d059c70f71372b064d452cdc.png"
                             alt="First slide">
                     </div>
-            </div>
+                </div>
         </header>
         <br>
         <div class="container">
@@ -72,13 +75,18 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
 
     <script src="./app.js"></script>
     <script src="./posts-list/posts-list-component.js"></script>
-  </body>
+</body>
+
 </html>
+ 
