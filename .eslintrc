@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        "angular"
+    ],
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "angular / controller_name": 0,
+        "no-set-state": "off"
+    },
+    "settings": {
+        "angular": 1
+    },
+    "globals": {
+        "angular": true
+    }
+}

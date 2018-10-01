@@ -12,7 +12,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(express.static(rootPath + '/app'));
 
-
+// app.get("*", function (req, res) {
+//     res.render("/app/index.html");
+// });
 
 app.listen(8000);
 console.log("Listening on port 8000 ...");
